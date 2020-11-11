@@ -4,13 +4,25 @@ import '../styles/App.css';
 class App extends Component {
     constructor(props) {
 		super(props);
-	};
+		this.state={
+			isParaShown:false,
+		};
+			this.showPara=this.showPara.bind(this);
 
+		}
+	
+showPara(){
+this.setState({isParaShown:true});
+}
+	
     render() {
     	return(
     		<div id="main">
-				{ /* Do not remove this main div!! */ }
-    		</div>
+<button id="click" onClick={this.showPara}>click button</button>
+{this.state.isParaShown?
+<p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>
+:null    		}
+			</div>
     	);
     }
 }
